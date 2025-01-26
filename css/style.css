@@ -11,7 +11,7 @@ body {
 
 h1 {
   font-size: 2.25rem;
-  font-weight: 400;
+  font-weight: 300;
   color: #fff;
 }
 
@@ -24,8 +24,13 @@ strong {
 }
 
 .eyebrow-headline {
-  font-weight: 700;
+  font-size: 0.625rem;
+  font-weight: 900;
   letter-spacing: 2px;
+}
+
+.subtitle {
+  font-size: 1.3125rem;
 }
 
 .eyebrow-headline,
@@ -33,10 +38,12 @@ strong {
 .register-today {
   color: #f18119;
   text-transform: uppercase;
+  font-weight: 900;
 }
 
-.small {
+.small-print {
   font-size: 0.625rem;
+  letter-spacing: 1px;
 }
 
 /* Layout */
