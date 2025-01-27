@@ -13,10 +13,16 @@ h1 {
   font-size: 2.25rem;
   font-weight: 300;
   color: #fff;
+  margin: 2em 0;
 }
 
 h2 {
   font-size: 1.3125rem;
+  margin: 0;
+}
+
+.register-today {
+  margin-top: 0;
 }
 
 strong {
@@ -27,10 +33,12 @@ strong {
   font-size: 0.625rem;
   font-weight: 900;
   letter-spacing: 2px;
+  order: -1;
 }
 
 .subtitle {
   font-size: 1.3125rem;
+  margin: 0;
 }
 
 .eyebrow-headline,
@@ -48,18 +56,21 @@ strong {
 
 /* Layout */
 
-.container {
-  width: 80%;
-  max-width: 675px;
-  margin: 0 auto;
-}
-
 .top-section {
+  background-color: #404040;
   background-image: url(/images/dark-ribs.jpg);
   background-size: cover;
   background-position: center;
-  padding: 1em 0;
+  padding: 0 0.5em 2em;
+  display: flex;
+  flex-direction: column;
 }
+
+.main-content {
+  padding: 2em 1em;
+}
+
+/* Form */
 
 input {
   display: block;
@@ -82,4 +93,26 @@ input {
   width: 200px;
   border-radius: 5px;
   padding: 0.75em 2em;
+}
+
+/* Media queries */
+@media (min-width: 500px) {
+  body {
+    font-size: 1.125rem;
+    display: flex;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2,
+  .subtitle {
+    font-size: 1.75rem;
+  }
+
+  .top-section,
+  .main-content {
+    width: 50%;
+  }
 }
