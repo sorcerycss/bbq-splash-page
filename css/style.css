@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Source Sans 3", serif;
@@ -13,7 +17,7 @@ h1 {
   font-size: 2.25rem;
   font-weight: 300;
   color: #fff;
-  margin: 2em 0;
+  margin: 0;
 }
 
 h2 {
@@ -32,8 +36,11 @@ strong {
 .eyebrow-headline {
   font-size: 0.625rem;
   font-weight: 900;
-  letter-spacing: 2px;
   order: -1;
+  margin: 0;
+  padding-top: 2px;
+  border-top: 5px solid #f18119;
+  border-image: linear-gradient(to left, #ff713b, #ffa51d) 1;
 }
 
 .subtitle {
@@ -58,45 +65,94 @@ strong {
 
 .top-section {
   background-color: #404040;
-  background-image: url(/images/dark-ribs.jpg);
+  background-image: url(/images/ribs.jpg);
+  background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
   padding: 0 0.5em 2em;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  min-height: 50vh;
 }
 
 .main-content {
   padding: 2em 1em;
 }
 
+/* Solution #1 for big screens */
+.top-section > *,
+.main-content > * {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Solution #2 for bigger screens */
+/* .container {
+  max-width: 400px;
+  margin: 0 auto;
+} */
+
+/* .container-intro { (take it off from .top-section)
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 50vh;
+} */
+
 /* Form */
 
-input {
-  display: block;
-  width: 230px;
-  margin: 1em auto;
-  padding: 0.5em 1em;
+.info-collector {
+  width: 80%;
+  max-width: 300px;
+}
+
+input,
+.btn {
+  width: 100%;
   border-radius: 5px;
+}
+
+input {
+  font-family: inherit;
+  text-align: inherit;
+  margin-bottom: .75em;
+  padding: .25em;
   border: 1px solid #404040;
-  text-align: center;
+  transform: scale(1);
+  transition: transform 250ms;
+}
+
+input:focus {
+  transform: scale(1.1);
 }
 
 .btn {
-  display: block;
-  margin: 0 auto;
-  text-decoration: none;
+  display: inline-block;
+  padding: 1em 1.5em;
+  font-size: .625rem;
   text-transform: uppercase;
-  font-weight: 700;
-  color: #fff;
-  background: #f18119;
-  width: 200px;
-  border-radius: 5px;
-  padding: 0.75em 2em;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(to left, #ff713b, #ffa51d);
+  color: white;
+  transform: scale(1);
+  transition: transform 250ms;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  transform: scale(1.1);
 }
 
 /* Media queries */
-@media (min-width: 500px) {
+@media (min-width: 600px) {
   body {
     font-size: 1.125rem;
     display: flex;
@@ -114,5 +170,16 @@ input {
   .top-section,
   .main-content {
     width: 50%;
+    min-height: 100vh;
   }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  /* Solution #2 for bigger screens */
+  /* .container-intro {
+    height: 100%;
+  } */
 }
